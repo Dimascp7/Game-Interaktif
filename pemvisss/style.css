@@ -1,0 +1,374 @@
+/* Atur latar belakang dan font dasar */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('pop-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container utama */
+.container {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5); /* semi transparan */
+  padding: 40px;
+  border-radius: 10px;
+}
+
+/* Judul utama */
+.container h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+/* Garis pemisah */
+hr {
+  width: 200px;
+  height: 5px;
+  background-color: white;
+  border: none;
+  margin: 20px auto;
+}
+
+/* Subjudul */
+.sub-text {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+/* Grid tombol menu */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  grid-gap: 20px;
+  justify-content: center;
+}
+
+/* Tombol menu */
+.menu-item {
+  border: 1px solid white;
+  padding: 30px 20px;
+  border-radius: 10px;
+  transition: background-color 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* Icon dalam tombol */
+.menu-item i {
+  font-size: 36px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Teks tombol */
+.menu-item span {
+  font-size: 18px;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('pop-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+}
+
+.form {
+  display: none;
+}
+
+.form.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.dashboard {
+  text-align: center;
+  max-width: 800px;
+}
+
+.header h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.menu-box {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid white;
+  padding: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.menu-box:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.menu-box i {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.menu-box span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.popup-container {
+  background-color: #2e2e38;
+  color: white;
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+.popup-container h2 {
+  margin-bottom: 20px;
+}
+
+.popup-container select,
+.popup-container input,
+.popup-container button {
+  margin: 8px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.popup-container select,
+.popup-container input {
+  width: 60%;
+  background-color: #3e3e4a;
+  color: white;
+}
+
+.popup-container button {
+  cursor: pointer;
+  color: rgb(167, 103, 103);
+}
+
+.popup-container button:nth-child(1) {
+  background-color: #3498db;
+}
+
+.popup-container button:nth-child(2) {
+  background-color: #e74c3c;
+}
+
+.popup-container button:nth-child(3) {
+  background-color: #7f8c8d;
+}
+
+.queue-container,
+.stack-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.queue-box,
+.stack-box {
+  padding: 10px 20px;
+  background-color: #444;
+  border-radius: 6px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  color: white;
+}
+
+.log {
+  margin-top: 20px;
+  text-align: left;
+  font-size: 14px;
+  max-height: 120px;
+  overflow-y: auto;
+  background: #1e1e2a;
+  padding: 10px;
+  border-radius: 6px;
+}
+@keyframes masuk {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes keluar {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(100%); opacity: 0; }
+}
+
+.queue-box {
+  animation: masuk 0.5s ease-out;
+}
+/* Animasi klik pada menu-box */
+.menu-box:active {
+  transform: scale(0.95);
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5) inset;
+}
+@keyframes bounce {
+  0%   { transform: scale(0.95); }
+  50%  { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.menu-box.clicked {
+  animation: bounce 0.3s ease;
+}
+.form {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.form.active {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stack-box {
+  animation: masuk 0.5s ease-out;
+}
+.slider {
+  overflow: hidden;
+  position: relative;
+  height: 150px;
+  margin: 30px auto;
+  max-width: 800px;
+  border-radius: 10px;
+}
+
+.slide-track {
+  display: flex;
+  width: calc(300px * 6); /* 6 gambar */
+  animation: scroll 20s linear infinite;
+}
+
+.slide {
+  width: 300px;
+  flex-shrink: 0;
+  padding: 0 10px;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-900px); /* 3 gambar * 300px */
+  }
+}
+.slider {
+  overflow: hidden;
+  position: relative;
+  height: 150px;
+  margin: 30px auto;
+  max-width: 800px;
+  border-radius: 10px;
+}
+
+.slide-track {
+  display: flex;
+  width: calc(300px * 6); /* 6 gambar */
+  animation: scroll 20s linear infinite;
+}
+
+.slide {
+  width: 300px;
+  flex-shrink: 0;
+  padding: 0 10px;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-900px); /* 3 gambar * 300px */
+  }
+}
+.stack-area {
+  border: 2px solid #ccc;
+  width: 150px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  padding: 10px;
+  margin: 20px;
+  background: #fff;
+}
+.stack-piece {
+  width: 100px;
+  height: 40px;
+  margin: 5px;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+.stacks {
+  display: flex;
+  justify-content: center;
+}
+#music-icon {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+}
+
+#music-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

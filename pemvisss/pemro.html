@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Game Interaktif</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div class="form active" id="form1">
+  <div class="dashboard">
+    <div class="header">
+      <h1>Game Interaktif</h1>
+      <p>Selamat Datang Wahai Pengguna Yang Ingin Belajar Sambil Bermain Game</p>
+    </div>
+
+    <!-- 🔥 SLIDER OTOMATIS MULAI DI SINI -->
+    <div class="slider">
+      <div class="slide-track">
+        <div class="slide"><img src="slide1.jpg" alt="slide1"></div>
+        <div class="slide"><img src="slide2.jpg" alt="slide2"></div>
+        <div class="slide"><img src="slide3.jpg" alt="slide3"></div>
+        <div class="slide"><img src="slide4.jpg" alt="slide4"></div>
+        <!-- duplikat buat looping -->
+        <div class="slide"><img src="slide1.jpg" alt="slide1"></div>
+        <div class="slide"><img src="slide2.jpg" alt="slide2"></div>
+        <div class="slide"><img src="slide3.jpg" alt="slide3"></div>
+        <div class="slide"><img src="slide4.jpg" alt="slide4"></div>
+      </div>
+    </div>
+    <!-- 🔥 SLIDER SELESAI -->
+
+    <div class="menu-grid">
+      <div class="menu-box" onclick="nextForm(5)">
+        <i class="fa-solid fa-dragon fa-3x"></i>
+        <span>Welcome</span>
+      </div>
+      <div class="menu-box" onclick="nextForm(3)">
+        <i class="fa fa-fire fa-3x"></i>
+        <span>Game Queue</span>
+      </div>
+      <div class="menu-box" onclick="nextForm(2)">
+        <i class="fa fa-book fa-3x"></i>
+        <span>Materi Q&S</span>
+      </div>
+      <div class="menu-box" onclick="nextForm(4)">
+        <i class="fa fa-dungeon fa-3x"></i>
+        <span>Game Stack</span>
+      </div>
+      <div class="audio-player" style="text-align:center; margin-top: 20px;">
+
+
+</div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Form 2: Materi -->
+<!-- Form 2: Materi -->
+<div class="form" id="form2">
+  <div class="popup-container">
+    <h2>Materi: Struktur Data Queue & Stack</h2>
+    
+    <h3>Queue (Antrian)</h3>
+    <p>
+       Queue (Antrian) adalah struktur data linear yang menggunakan prinsip <strong>FIFO (First In First Out)</strong>.
+       Artinya, elemen yang pertama kali masuk akan menjadi yang pertama keluar.
+       Contohnya seperti orang mengantre di loket pembayaran atau printer.
+    </p>
+    <ul style="text-align: left;">
+      <li><strong>enqueue:</strong> Tambah ke belakang</li>
+      <li><strong>dequeue:</strong> Hapus dari depan</li>
+    </ul>
+
+    <h3>Stack (Tumpukan)</h3>
+    <p>
+      Stack (Tumpukan) adalah struktur data linear yang menggunakan prinsip <strong>LIFO (Last In First Out)</strong>.
+      Artinya, elemen yang terakhir masuk akan menjadi yang pertama keluar.
+      Contohnya seperti tumpukan piring di dapur, atau fitur undo/redo pada aplikasi.
+   </p>
+    <ul style="text-align: left;">
+      <li><strong>push:</strong> Tambah ke atas</li>
+      <li><strong>pop:</strong> Hapus dari atas</li>
+    </ul>
+
+    <button onclick="nextForm(1)" style="margin-top: 20px;">Kembali</button>
+  </div>
+</div>
+
+
+<!-- Form 3: Simulasi Queue -->
+<!-- Form 3: Simulasi Queue -->
+<div class="form" id="form3">
+  <div class="popup-container">
+    <h2>Simulasi Interaktif Queue</h2>
+    <label for="kasus">Studi Kasus:</label><br>
+    <select id="kasus" onchange="updateKasus()">
+      <option value="Loket Tiket">Loket Tiket</option>
+      <option value="Parkiran Mobil">Parkiran Mobil</option>
+      <option value="Layanan Bank">Layanan Bank</option>
+    </select>
+    <br>
+    <input type="text" id="nama" placeholder="Nama pelanggan" />
+    <br>
+    <button onclick="enqueue()">Tambah Antrian</button>
+    <button onclick="dequeue()">Layani Antrian</button>
+    <button onclick="resetQueue()">Reset</button>
+    <div id="judulKasus" style="font-weight: 600; margin: 20px 0;"></div>
+    <div class="queue-container" id="queueContainer"></div>
+    <div class="log" id="log"></div>
+    <button onclick="nextForm(1)" style="margin-top: 20px;">Kembali</button>
+  </div>
+</div>
+
+
+<div class="form" id="form4">
+  <div class="popup-container">
+    <h2>Puzzle Stack Game</h2>
+    <p>Susun ulang potongan gambar dari stack acak ke stack tujuan menggunakan aturan LIFO.</p>
+
+    <div class="stacks">
+      <div class="stack-area" id="sourceStack">
+        <h3>Stack Acak</h3>
+      </div>
+      <div class="stack-area" id="targetStack">
+        <h3>Stack Tujuan</h3>
+      </div>
+    </div>
+
+    <button onclick="moveTop()">Pindahkan Atas</button>
+    <button onclick="checkPuzzle()">Cek Jawaban</button>
+    <div id="puzzleMessage" style="margin-top: 15px; font-weight: bold;"></div>
+    <button onclick="nextForm(1)" style="margin-top: 20px;">Kembali</button>
+  </div>
+</div>
+
+<!-- Form 5: Welcome -->
+<div class="form" id="form5">
+  <div class="popup-container">
+    <h2 class="tm-page-title">Selamat Datang Di Game Berbasis Web</h2>
+    <div class="welcome-content">
+      <div class="welcome-left">
+        <p>
+          Silakan bagikan website ini kepada teman-teman atau siswa Anda. Ini akan sangat membantu
+          dalam memperkenalkan media pembelajaran interaktif tentang Queue dan Stack. Terima kasih!
+        </p>
+      </div>
+      <div class="welcome-right">
+        <p>
+          Website ini sangat bermanfaat bagi siswa SMK untuk mempelajari konsep dasar struktur data,
+          khususnya <strong>Queue (Antrian)</strong> dan <strong>Stack (Tumpukan)</strong>, dengan cara
+          yang interaktif dan menyenangkan.
+        </p>
+        <P>JANGAN LUPA PENCET NAGA DI KIRI BAWAH YAA</P>
+      </div>
+    </div>
+    <button onclick="nextForm(1)" style="margin-top: 20px;">Kembali</button>
+  </div>
+</div>
+<!-- Ikon Musik -->
+<div id="music-icon" onclick="toggleMusic()">
+  <img id="music-img" src="naga.png" alt="Music Icon" style="width:40px;">
+</div>
+
+<!-- Suara Klik -->
+<audio id="soundClick">
+  <source src="gameofthrones.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Musik Latar Belakang -->
+<audio id="bgMusic" loop>
+  <source src="gameofthrones.mp3" type="audio/mpeg">
+</audio>
+
+
+
+
+
+<script>
+  function nextForm(no) {
+    document.querySelectorAll(".form").forEach(f => f.classList.remove("active"));
+    document.getElementById(`form${no}`).classList.add("active");
+    if (no === 3) updateKasus();
+  }
+
+  // Queue logic
+  let queue = [];
+  let currentKasus = "Loket Tiket";
+
+  function updateKasus() {
+    const select = document.getElementById("kasus");
+    currentKasus = select.value;
+    document.getElementById("judulKasus").textContent = `Simulasi: ${currentKasus}`;
+    logAction(`🔄 Studi kasus diubah menjadi: ${currentKasus}`);
+    updateDisplay();
+  }
+
+  function updateDisplay() {
+    const container = document.getElementById("queueContainer");
+    container.innerHTML = "";
+    queue.forEach((name, index) => {
+      const box = document.createElement("div");
+      box.className = "queue-box";
+      box.textContent = `${index + 1}. ${name}`;
+      container.appendChild(box);
+    });
+  }
+
+  function enqueue() {
+    const input = document.getElementById("nama");
+    const name = input.value.trim();
+    if (name === "") return;
+    queue.push(name);
+    logAction(`➕ ${name} masuk antrian pada ${currentKasus}.`);
+    updateDisplay();
+    input.value = "";
+  }
+
+  function dequeue() {
+    if (queue.length === 0) {
+      logAction("⚠ Antrian kosong.");
+      return;
+    }
+    const served = queue.shift();
+    logAction(`✅ ${served} telah dilayani pada ${currentKasus}.`);
+    updateDisplay();
+  }
+
+  function resetQueue() {
+    queue = [];
+    updateDisplay();
+    logAction("🔁 Antrian direset.");
+  }
+
+  function logAction(message) {
+    const log = document.getElementById("log");
+    const entry = document.createElement("div");
+    entry.textContent = message;
+    log.prepend(entry);
+  }
+
+  // Stack logic
+  let stack = [];
+
+  function pushStack() {
+    const input = document.getElementById("stackItem");
+    const item = input.value.trim();
+    if (item === "") return;
+    stack.push(item);
+    logStackAction(`📦 PUSH: ${item}`);
+    updateStackDisplay();
+    input.value = "";
+  }
+
+  function popStack() {
+    if (stack.length === 0) {
+      logStackAction("⚠ Stack kosong.");
+      return;
+    }
+    const popped = stack.pop();
+    logStackAction(`🗑 POP: ${popped}`);
+    updateStackDisplay();
+  }
+
+  function resetStack() {
+    stack = [];
+    updateStackDisplay();
+    logStackAction("🔁 Stack direset.");
+  }
+
+  function updateStackDisplay() {
+    const container = document.getElementById("stackContainer");
+    container.innerHTML = "";
+    stack.forEach((item, index) => {
+      const box = document.createElement("div");
+      box.className = "stack-box";
+      box.textContent = `${stack.length - index}. ${item}`;
+      container.appendChild(box);
+    });
+  }
+
+  function logStackAction(message) {
+    const log = document.getElementById("stackLog");
+    const entry = document.createElement("div");
+    entry.textContent = message;
+    log.prepend(entry);
+  }
+
+  // Tampilkan form awal
+  nextForm(1);
+  
+</script>
+<script>
+  const pieces = [
+    { id: 1, img: "piece1.jpg" },
+    { id: 2, img: "piece2.jpg" },
+    { id: 3, img: "piece3.jpg" },
+    { id: 4, img: "piece4.jpg" }
+  ];
+
+  let sourceStack = [];
+  let targetStack = [];
+
+  function initPuzzle() {
+    const shuffled = [...pieces].sort(() => Math.random() - 0.5);
+    sourceStack = shuffled;
+    targetStack = [];
+    renderStacks();
+    document.getElementById("puzzleMessage").textContent = "";
+  }
+
+  function renderStacks() {
+    const sourceDiv = document.getElementById("sourceStack");
+    const targetDiv = document.getElementById("targetStack");
+
+    sourceDiv.innerHTML = "<h3>Stack Acak</h3>";
+    targetDiv.innerHTML = "<h3>Stack Tujuan</h3>";
+
+    sourceStack.forEach(piece => {
+      const el = document.createElement("div");
+      el.className = "stack-piece";
+      el.style.backgroundImage = `url(${piece.img})`;
+      sourceDiv.appendChild(el);
+    });
+
+    targetStack.forEach(piece => {
+      const el = document.createElement("div");
+      el.className = "stack-piece";
+      el.style.backgroundImage = `url(${piece.img})`;
+      targetDiv.appendChild(el);
+    });
+  }
+
+  function moveTop() {
+    if (sourceStack.length === 0) return;
+    const topPiece = sourceStack.pop();
+    targetStack.push(topPiece);
+    renderStacks();
+  }
+
+  function checkPuzzle() {
+    const isCorrect = pieces.every((p, i) => targetStack[i]?.id === p.id);
+    document.getElementById("puzzleMessage").textContent = isCorrect
+      ? "🎉 Puzzle Selesai dengan Benar!"
+      : "❌ Masih Salah, Coba Lagi!";
+  }
+
+  const originalNextForm = nextForm;
+  nextForm = function(no) {
+    document.querySelectorAll(".form").forEach(f => f.classList.remove("active"));
+    document.getElementById(`form${no}`).classList.add("active");
+    if (no === 3) updateKasus();
+    if (no === 4) initPuzzle(); // Puzzle Stack di form 4
+  };
+</script>
+ <script>
+    let isPlaying = false;
+    let audio = new Audio("gameofthrones.mp3");
+    audio.loop = true;
+
+    function toggleMusic() {
+      isPlaying = !isPlaying;
+      if (isPlaying) {
+        audio.play();
+        document.getElementById("music-icon").src = "music-on.png";
+      } else {
+        audio.pause();
+        document.getElementById("music-icon").src = "music-off.png";
+      }
+    }
+  </script>
+</body>
+</html>
